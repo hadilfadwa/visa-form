@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>استمارة طلب تأشيرة العمرة</title>
+  <link rel="stylesheet" href="tp1.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="soudi ara.jpg" alt="Logo">
+      <h1>سفارة المملكة العربية السعودية<br>القسم القنصلي<br><small>Ambassade du Royaume d’Arabie Saoudite - Section Consulaire</small></h1>
+    </div>
+
+    <h2>🕋 استمارة طلب تأشيرة </h2>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <form id="visaForm">
+      <!-- Page 1 -->
+      <div class="form-page active" id="page1">
+        <div class="input-group">
+  <label class="label-ar">الاسم الكامل</label>
+  <label class="label-en">Full Name</label>
+ <input type="text" placeholder="أدخل اسمك الكامل" required data-validate="name">
+
+
+</div>
+
+<div class="input-group">
+  <label class="label-ar">اللقب</label>
+  <label class="label-en">Last Name</label>
+  <input type="text" placeholder="أدخل لقبك" required data-validate="name">
+
+</div>
+
+<div class="input-group">
+  <label class="label-ar">تاريخ الميلاد</label>
+  <label class="label-en">Date of Birth</label>
+  <input type="date" required>
+</div>
+
+<div class="input-group">
+  <label class="label-ar">رقم جواز السفر</label>
+  <label class="label-en">Passport Number</label>
+  <input type="text" placeholder="XXXXXXXX" required data-validate="passport">
+
+</div>
+
+
+        <div class="buttons">
+          <div></div>
+          <button type="button" onclick="nextPage(2)">التالي</button>
+        </div>
+      </div>
+
+      <!-- Page 2 -->
+      <div class="form-page" id="page2">
+        <label class="label-ar">نوع التأشيرة</label>
+         <label class="label-en">visa Type</label>
+        <select required>
+          <option>عمرة</option>
+          <option>حج</option>
+          <option>زيارة</option>
+        </select>
+        <div class="input-group">
+    <label class="label-ar">بلد الإقامة</label>
+    <label class="label-en">Country of Residence</label>
+    <input type="text" required>
+  </div>
+
+  <div class="input-group">
+    <label class="label-ar">تاريخ الوصول</label>
+    <label class="label-en">Arrival Date</label>
+    <input type="date" required>
+  </div>
+
+  <div class="input-group">
+    <label class="label-ar">تاريخ المغادرة</label>
+    <label class="label-en">Departure Date</label>
+    <input type="date" required>
+  </div>
+
+        <div class="buttons">
+          <button type="button" onclick="nextPage(1)">السابق</button>
+          <button type="button" onclick="nextPage(3)">التالي</button>
+        </div>
+      </div>
+
+      <!-- Page 3 -->
+      <div class="form-page" id="page3">
+        
+  <div class="input-group">
+    <label class="label-ar" > العنوان الكامل</label>
+    <label class="label-en">Departure Date</label>
+    <input type="date" required>
+  </div>
+
+  <div class="input-group">
+    <label class="label-ar" > البريد الإلكتروني</label>
+    <label class="label-en">Departure Date</label>
+    <input type="email" required data-validate="email">
+
+  </div>
+
+  <div class="input-group">
+    <label class="label-ar" > رقم الهاتف</label>
+
+    <label class="label-en">Departure Date</label>
+    <input type="text" required data-validate="phone">
+
+  </div>
+          <div class="buttons">
+          <button type="button" onclick="nextPage(2)">السابق</button>
+          <button type="button" onclick="nextPage(4)">التالي</button>
+        </div>
+      </div>
+
+      <!-- Page 4 -->
+      <div class="form-page" id="page4">
+        <label>إرفاق صورة جواز السفر</label>
+        <input type="file" required>
+        <label>إرفاق صورة شخصية</label>
+        <input type="file" required>
+        <label class="checkbox-label">
+  <input type="checkbox" required>
+  <span>أتعهد بصحة المعلومات الواردة أعلاه</span>
+</label>
+
+
+        <div class="buttons">
+          <button type="button" onclick="nextPage(3)">السابق</button>
+          <button type="submit" class="submit-btn">إرسال الطلب</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+  <script>
+    let currentPage = 1;
+    const progressBar = document.getElementById("progressBar");
+
+    function nextPage(page) {
+      document.getElementById(`page${currentPage}`).classList.remove("active");
+      document.getElementById(`page${page}`).classList.add("active");
+      currentPage = page;
+      progressBar.style.width = (page * 25) + "%";
+      window.scrollTo(0, 0);
+    }
+
+    document.getElementById("visaForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("✅ تم إرسال الطلب بنجاح، شكرًا لتعبئة استمارة ");
+    });
+
+
+const pages = document.querySelectorAll(".form-page");
+
+function showPage(index) {
+    pages.forEach((p, i) => {
+        p.classList.toggle("active", i === index);
+    });
+}
+
+function showPage(index) {
+  pages.forEach((p, i) => {
+    p.classList.toggle("active", i === index);
+  });
+}
+
+document.querySelectorAll(".next-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentPage < pages.length - 1) currentPage++;
+    showPage(currentPage);
+  });
+});
+
+document.querySelectorAll(".prev-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    if (currentPage > 0) currentPage--;
+    showPage(currentPage);
+  });
+});
+function showError(input, message) {
+    let error = input.parentElement.querySelector(".error-msg");
+    if (!error) {
+        error = document.createElement("small");
+        error.className = "error-msg";
+        error.style.color = "red";
+        error.style.marginTop = "-10px";
+        error.style.display = "block";
+        input.parentElement.appendChild(error);
+    }
+    error.textContent = message;
+}
+
+
+function clearError(input) {
+    const error = input.parentElement.querySelector(".error-msg");
+    if (error) error.textContent = "";
+}
+
+
+function validateInput(input) {
+    const value = input.value.trim();
+    const type = input.getAttribute("data-validate");
+
+    
+    if (type === "name") {
+        if (/[0-9]/.test(value)) {
+            showError(input, "❌ الاسم يجب ألا يحتوي أرقامًا");
+        } else clearError(input);
+    }
+
+    
+    if (type === "passport") {
+        if (/[^0-9]/.test(value)) {
+            input.value = value.replace(/[^0-9]/g, "");
+            showError(input, "❌ رقم الجواز يجب أن يحتوي أرقامًا فقط");
+        } else clearError(input);
+    }
+
+    
+    if (type === "phone") {
+        if (/[^0-9]/.test(value)) {
+            input.value = value.replace(/[^0-9]/g, "");
+            showError(input, "❌ رقم الهاتف يجب أن يكون أرقاما فقط");
+        } else clearError(input);
+    }
+
+    
+    if (type === "email") {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!regex.test(value)) {
+            showError(input, "❌ البريد الإلكتروني غير صالح");
+        } else clearError(input);
+    }
+}
+
+// تطبيق التحقق عند الكتابة
+document.querySelectorAll("[data-validate]").forEach(input => {
+    input.addEventListener("input", () => validateInput(input));
+});
+function nextPage(page) {
+    const currentFormPage = document.getElementById(`page${currentPage}`);
+    const inputs = currentFormPage.querySelectorAll("input[required], select[required]");
+    let valid = true;
+
+    inputs.forEach(input => {
+        validateInput(input); // تحقق من الصيغ الخاصة
+        if (!input.value || input.parentElement.querySelector(".error-msg")?.textContent) {
+            valid = false;
+        }
+    });
+
+    if (!valid) {
+        alert("❌ الرجاء تعبئة جميع الحقول بشكل صحيح قبل المتابعة");
+        return; // يمنع الانتقال
+    }
+
+    // الانتقال للصفحة التالية
+    document.getElementById(`page${currentPage}`).classList.remove("active");
+    document.getElementById(`page${page}`).classList.add("active");
+    currentPage = page;
+    progressBar.style.width = (page * 25) + "%";
+    window.scrollTo(0, 0);
+}
+
+
+
+  </script>
+</body>
+</html>
