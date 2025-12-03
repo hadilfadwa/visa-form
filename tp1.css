@@ -5,7 +5,7 @@
 
     body {
       margin: 0;
-      background-image: url('kaab.jpg');
+      background-image: url('mosque-3725372.jpg');
       background-size: cover;
       background-position: center top;
       background-attachment: fixed;
@@ -47,7 +47,7 @@
 
     h2 {
       text-align: center;
-      color: #ffd700;
+      color: #22a102b0;
       margin-bottom: 10px;
     }
 
@@ -64,7 +64,7 @@
     .progress-bar {
       height: 100%;
       width: 25%;
-      background-color: #ffd700;
+      background-color:#22a102b0;
       border-radius: 20px;
       transition: width 0.4s ease;
     }
@@ -113,7 +113,7 @@
 }
 
     button {
-      background-color: #ffd700;
+      background-color: #22a102b0;
       border: none;
       padding: 10px 25px;
       border-radius: 10px;
@@ -123,16 +123,16 @@
     }
 
     button:hover {
-      background-color: #e6c200;
+      background-color: #22a102b0;
     }
 
     .submit-btn {
       width: 100%;
-      background-color: #28a745;
+      background-color:  #004d40;
     }
 
     .submit-btn:hover {
-      background-color: #218838;
+      background-color: #004d40;
     }
 
     /* تأثير خفيف عند تمرير المؤشر على زر الإرسال */
@@ -158,7 +158,7 @@
 /* عند تمرير الفأرة */
 .submit-btn:hover {
   transform: scale(1.05);
-  background-color: #009e66;
+  background-color:  #004d40;
 }
 
 
@@ -190,7 +190,7 @@
 
 /* الزر التالي والخلف */
 button.next-btn, button.prev-btn {
-  background-color: #006a4e;
+  background-color:  #004d40;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -201,7 +201,7 @@ button.next-btn, button.prev-btn {
 }
 
 button.next-btn:hover, button.prev-btn:hover {
-  background-color: #009e66;
+  background-color:  #004d40;
   transform: scale(1.05);
 }
 

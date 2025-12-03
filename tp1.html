@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>استمارة طلب تأشيرة العمرة</title>
   <link rel="stylesheet" href="tp1.css">
+  <link rel="stylesheet" href="script.js">
 </head>
 <body>
   <div class="container">
     <div class="header">
       <img src="soudi ara.jpg" alt="Logo">
-      <h1>سفارة المملكة العربية السعودية<br>القسم القنصلي<br><small>Ambassade du Royaume d’Arabie Saoudite - Section Consulaire</small></h1>
+      <h1>سفارة المملكة العربية السعودية<br>القسم القنصلي<br></h1>
     </div>
 
     <h2>🕋 استمارة طلب تأشيرة </h2>
@@ -24,7 +25,7 @@
       <div class="form-page active" id="page1">
         <div class="input-group">
   <label class="label-ar">الاسم الكامل</label>
-  <label class="label-en">Full Name</label>
+  
  <input type="text" placeholder="أدخل اسمك الكامل" required data-validate="name">
 
 
@@ -32,20 +33,20 @@
 
 <div class="input-group">
   <label class="label-ar">اللقب</label>
-  <label class="label-en">Last Name</label>
+  
   <input type="text" placeholder="أدخل لقبك" required data-validate="name">
 
 </div>
 
 <div class="input-group">
   <label class="label-ar">تاريخ الميلاد</label>
-  <label class="label-en">Date of Birth</label>
+ 
   <input type="date" required>
 </div>
 
 <div class="input-group">
   <label class="label-ar">رقم جواز السفر</label>
-  <label class="label-en">Passport Number</label>
+  
   <input type="text" placeholder="XXXXXXXX" required data-validate="passport">
 
 </div>
@@ -60,7 +61,7 @@
       <!-- Page 2 -->
       <div class="form-page" id="page2">
         <label class="label-ar">نوع التأشيرة</label>
-         <label class="label-en">visa Type</label>
+         
         <select required>
           <option>عمرة</option>
           <option>حج</option>
@@ -68,19 +69,19 @@
         </select>
         <div class="input-group">
     <label class="label-ar">بلد الإقامة</label>
-    <label class="label-en">Country of Residence</label>
+   
     <input type="text" required>
   </div>
 
   <div class="input-group">
     <label class="label-ar">تاريخ الوصول</label>
-    <label class="label-en">Arrival Date</label>
+    
     <input type="date" required>
   </div>
 
   <div class="input-group">
     <label class="label-ar">تاريخ المغادرة</label>
-    <label class="label-en">Departure Date</label>
+    
     <input type="date" required>
   </div>
 
@@ -95,21 +96,20 @@
         
   <div class="input-group">
     <label class="label-ar" > العنوان الكامل</label>
-    <label class="label-en">Departure Date</label>
+  
     <input type="date" required>
   </div>
 
   <div class="input-group">
     <label class="label-ar" > البريد الإلكتروني</label>
-    <label class="label-en">Departure Date</label>
+    
     <input type="email" required data-validate="email">
 
   </div>
 
   <div class="input-group">
     <label class="label-ar" > رقم الهاتف</label>
-
-    <label class="label-en">Departure Date</label>
+    
     <input type="text" required data-validate="phone">
 
   </div>

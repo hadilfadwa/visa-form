@@ -9,3 +9,4 @@ languageToggle.addEventListener('click', () => {
         alert("تم تغيير اللغة إلى العربية");
     }
 });
+
